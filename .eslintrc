@@ -1,0 +1,38 @@
+---
+extends:
+  - ./js-coding-standards/environments/nodejs/latest.yml
+  - ./js-coding-standards/environments/nodejs/best-practices.yml
+  - ./js-coding-standards/environments/nodejs/optional.yml
+  - ./js-coding-standards/coding-styles/base.yml
+
+globals:
+  document: true
+
+ecmaFeatures:
+  jsx: true
+  # These are not implemented / behind flag - enable with caution (or use a transpiler)
+  defaultParams: true
+  destructuring: true
+  regexUFlag: true
+  regexYFlag: true
+  restParams: true
+  experimentalObjectRestSpread: true
+
+rules:
+  # These stylistic issues will be amended later, there's several hundreds of warnings reported from
+  # these...
+  curly:
+    - 1
+    - multi
+  padded-blocks: 0
+  no-inline-comments: 0
+  array-bracket-spacing:
+    - 1
+    - always
+  require-jsdoc: 0
+  valid-jsdoc: 0
+  # If your editor cannot find and show these to you, occasionally turn this off and run the linter.
+  no-warning-comments: 0
+  space-before-function-paren:
+   - 1
+   - never
