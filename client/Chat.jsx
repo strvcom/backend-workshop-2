@@ -15,11 +15,6 @@ export default class Chat extends React.Component {
 
   componentDidMount() {
     // Insert updating magic here
-    this.socket = io()
-
-    this.socket.on('message', message => {
-      this.addMessage(message)
-    })
   }
 
   addMessage(message) {
@@ -42,9 +37,6 @@ export default class Chat extends React.Component {
       user: this.props.user,
       date: new Date().toISOString()
     }
-
-    this.socket.emit('message', message)
-
   }
 
   render() {
